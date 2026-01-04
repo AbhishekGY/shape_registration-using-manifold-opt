@@ -123,12 +123,16 @@ class Mesh:
         # Sort each edge so smaller index comes first (for deduplication)
         edges = np.sort(edges, axis=1)
 
-        # Remove duplicates by converting to structured array and using np.unique
-        edges_structured = edges.view(dtype=[('v0', np.int32), ('v1', np.int32)])
-        unique_edges = np.unique(edges_structured)
+        # Make contiguous for structured array view
+        edges = np.ascontiguousarray(edges)
 
-        # Convert back to regular array
-        self._edges = unique_edges.view(np.int32).reshape(-1, 2)
+        # Remove duplicates using lexicographic sorting
+        # Convert to tuple of columns for unique row detection
+        _, unique_indices = np.unique(
+            edges[:, 0] * (edges[:, 1].max() + 1) + edges[:, 1],
+            return_index=True
+        )
+        self._edges = edges[np.sort(unique_indices)]
         return self._edges
 
     def compute_face_normals(self) -> np.ndarray:

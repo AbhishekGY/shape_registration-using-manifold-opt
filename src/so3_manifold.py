@@ -54,7 +54,7 @@ def hat(omega: np.ndarray) -> np.ndarray:
     """Convert 3-vector to skew-symmetric matrix (hat operator).
 
     This is the Lie algebra isomorphism from R^3 to so(3).
-    The resulting matrix [omega]_x satisfies: [omega]_x @ v = omega × v
+    The resulting matrix [omega]_x satisfies: [omega]_x @ v = cross(omega, v)
 
     For omega = [w1, w2, w3]:
         [omega]_x = [[ 0,  -w3,  w2],
