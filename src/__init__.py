@@ -18,6 +18,16 @@ from .so3_manifold import (
     axis_angle_to_rotation,
     rotation_to_axis_angle,
 )
+from .cost_functions import (
+    DataTerm,
+    PointToPlaneDataTerm,
+    SmoothnessRegularization,
+    RigidityRegularization,
+    compute_rotation_gradient,
+    compute_translation_gradient,
+    compute_deformation_gradient,
+    numerical_gradient_check,
+)
 
 __all__ = [
     # Data structures
@@ -39,4 +49,13 @@ __all__ = [
     'random_rotation',
     'axis_angle_to_rotation',
     'rotation_to_axis_angle',
+    # Cost functions
+    'DataTerm',
+    'PointToPlaneDataTerm',
+    'SmoothnessRegularization',
+    'RigidityRegularization',
+    'compute_rotation_gradient',
+    'compute_translation_gradient',
+    'compute_deformation_gradient',
+    'numerical_gradient_check',
 ]
