@@ -28,6 +28,12 @@ from .cost_functions import (
     compute_deformation_gradient,
     numerical_gradient_check,
 )
+from .optimizer import (
+    OptimizerConfig,
+    OptimizationResult,
+    ManifoldRegistration,
+    create_optimizer,
+)
 
 __all__ = [
     # Data structures
@@ -58,4 +64,9 @@ __all__ = [
     'compute_translation_gradient',
     'compute_deformation_gradient',
     'numerical_gradient_check',
+    # Optimizer
+    'OptimizerConfig',
+    'OptimizationResult',
+    'ManifoldRegistration',
+    'create_optimizer',
 ]
