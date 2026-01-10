@@ -34,6 +34,18 @@ from .optimizer import (
     ManifoldRegistration,
     create_optimizer,
 )
+from .visualization import (
+    plot_mesh,
+    plot_meshes,
+    plot_registration_comparison,
+    plot_cost_history,
+    visualize_error_heatmap,
+    visualize_registration_error,
+    compute_vertex_errors,
+    plot_correspondences,
+    plot_gradient_norms,
+    create_registration_summary,
+)
 
 __all__ = [
     # Data structures
@@ -69,4 +81,15 @@ __all__ = [
     'OptimizationResult',
     'ManifoldRegistration',
     'create_optimizer',
+    # Visualization
+    'plot_mesh',
+    'plot_meshes',
+    'plot_registration_comparison',
+    'plot_cost_history',
+    'visualize_error_heatmap',
+    'visualize_registration_error',
+    'compute_vertex_errors',
+    'plot_correspondences',
+    'plot_gradient_norms',
+    'create_registration_summary',
 ]
