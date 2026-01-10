@@ -30,9 +30,3 @@ ENV/
 *.swp
 *.swo
 .DS_Store
-
-# Generated output files
-results/*.png
-results/*.jpg
-results/*.gif
-!results/.gitkeep
