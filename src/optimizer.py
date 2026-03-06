@@ -38,13 +38,13 @@ class OptimizerConfig:
     # Learning rates
     lr_R: float = 0.01          # Rotation learning rate
     lr_t: float = 0.01          # Translation learning rate
-    lr_d: float = 0.001         # Deformation learning rate
+    lr_d: float = 0.01          # Deformation learning rate (increase for more flexibility)
 
-    # Regularization
-    lambda_smooth: float = 0.1  # Smoothness regularization weight
+    # Regularization (lower = more deformation flexibility, higher = smoother)
+    lambda_smooth: float = 0.01  # Smoothness regularization weight
 
     # Convergence criteria
-    max_iterations: int = 200
+    max_iterations: int = 300
     cost_tol: float = 1e-7      # Stop if |cost_change| < tol
     grad_tol: float = 1e-6      # Stop if gradient norm < tol
 
